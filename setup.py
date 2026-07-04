@@ -48,3 +48,15 @@ def scramble(n_moves = 5):#random choice rn will change
 
 def heuristic_distance(state):
     return np.sum(state == solved_cube()) #how close are we to a complete cube?
+
+
+def compute_rewards(state):
+    d0 = heuristic_distance(state)
+    rewards = []
+
+    for move in MOVE_NAMES:
+        next_state = apply_move(state, move)
+        d1 = heuristic_distance(next_state)
+        rewards.append(d1 - d0)  # positive = closer to solved
+
+    return np.array(rewards, dtype=np.float32)

@@ -4,6 +4,7 @@ from movelist import move_table
 
 from scklearn.neural_network import MLPRegressor
 
+model = MLPRegressor(hidden_layer_sizes = (256, 256), activation = "relu", solver= "adam", max_iter = 1, warm_start = True)
 
 COLOURS = ["W", "R", "B", "O", "G", "Y"]  # defining the moves
 

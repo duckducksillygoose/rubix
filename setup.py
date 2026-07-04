@@ -36,3 +36,15 @@ MOVE_NAMES = list(move_table.keys())
 def apply_move(state, move):
     perm = move_table[move]
     return state[perm] #make move function
+
+
+
+def scramble(n_moves = 5):#random choice rn will change
+    state = solved_cube()
+    for _ in range(n_moves):
+        move = random.choice(MOVE_NAMES)
+        state = apply_move(state, move)
+
+
+def heuristic_distance(state):
+    return np.sum(state == solved_cube()) #how close are we to a complete cube?

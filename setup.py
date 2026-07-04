@@ -66,3 +66,6 @@ def compute_rewards(state):
     return np.array(rewards, dtype=np.float32)
 
 
+X_init = one_hot_encode(solved_cube()).reshape(1, -1)
+y_init = compute_rewards(solved_cube()).reshape(1, -1)
+model.partial_fit(X_init, y_init)

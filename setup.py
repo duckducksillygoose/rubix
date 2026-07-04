@@ -1,5 +1,6 @@
 import numpy as np
 import random
+from movelist import move_table
 
 COLOURS = ["W", "R", "B", "O", "G", "Y"]  # defining the moves
 

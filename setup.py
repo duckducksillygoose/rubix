@@ -1,6 +1,7 @@
 import numpy as np
+import random
 
-COLORS = ["W", "R", "B", "O", "G", "Y"]  # defining the moves
+COLOURS = ["W", "R", "B", "O", "G", "Y"]  # defining the moves
 
 def solved_cube():
     # 6 faces × 9 stickers each

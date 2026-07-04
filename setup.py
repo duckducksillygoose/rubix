@@ -28,3 +28,9 @@ U_perm = np.array([
 ])
 
 move_table= {"U:": U_perm}
+
+MOVE_NAMES = list(move_table.keys())
+
+def apply_move(state, move):
+    perm = move_table[move]
+    return state[perm] #make move function

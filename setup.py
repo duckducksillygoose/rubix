@@ -2,6 +2,9 @@ import numpy as np
 import random
 from movelist import move_table
 
+from scklearn.neural_network import MLPRegressor
+
+
 COLOURS = ["W", "R", "B", "O", "G", "Y"]  # defining the moves
 
 def solved_cube():
@@ -60,3 +63,5 @@ def compute_rewards(state):
         rewards.append(d1 - d0)  # positive = closer to solved
 
     return np.array(rewards, dtype=np.float32)
+
+
